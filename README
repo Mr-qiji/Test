@@ -1,0 +1,18 @@
+#!/bin/sh
+while [ -n "$1" ]; do
+case $1 in
+	-h) help;shift 1;;
+	-a) opt_a=1;shift 1;;
+	-b) opt_b=$2;shift 2;;
+	--) shift;break;;
+	-*) echo "erro:no such option $1. -h for help";exit 1;;
+	*) break;;
+	esac
+	done
+
+	echo "opt_a is $opt_a"
+	echo "opt_b is $opt_b"
+	echo "first arg is $1"
+	echo "2nd arg is $2"
+
+
